@@ -48,3 +48,9 @@ p {
 .result{
   color: white;
 }
+.btnclear{
+  background-color: white;
+  height: 30px;
+  width: 70px;
+
+}

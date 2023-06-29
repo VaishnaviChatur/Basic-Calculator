@@ -7,15 +7,24 @@ export default function Calculator() {
   const[total,setTotal] =useState('')
   function handleAdd(){
     setTotal(parseInt(num1)+parseInt(num2))
+    
   }
   function handleSub(){
     setTotal(num1-num2)
+   
    }
    function handleMul(){
     setTotal(num1*num2)
+   
    }
    function handleDiv(){
     setTotal(num1/num2)
+   
+   }
+   function handleClear(){
+   
+    setNum1('')
+    setNum2('')
    }
   return (
     <>
@@ -24,14 +33,15 @@ export default function Calculator() {
    
       {/* <p>here you can perform operation Add/sub/duvision/multi</p> */}
       <input  className={styles.inputbox} type='number' value={num1} onChange={e=>setNum1(e.target.value)}/>&nbsp;
-      <input className={styles.inputbox} type='number' value={num2} onChange={e=>setNum2(e.target.value)}/>
+      <input className={styles.inputbox} type='number' value={num2} onChange={e=>setNum2(e.target.value)}/> <button className={styles.btnclear} onClick={handleClear}>clear</button>
+      <h1 className={styles.result}>Total is {total}</h1>
       <div className={styles.gapp}>
      <button className={styles.btn} onClick={handleAdd}>Addition</button>
      <button className={styles.btn} onClick={handleSub}>subtraction</button>
      <button className={styles.btn} onClick={handleMul}>Multiplication</button>
-     <button className={styles.btn} onClick={handleDiv}>Division</button>
+     <button className={styles.btn} onClick={handleDiv}>Division</button>     
      </div>
-     <h1 className={styles.result}>Total is {total}</h1>
+   
     </div>
     </>
   );
